@@ -44,6 +44,7 @@ public class AddTwoNumbers {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
+    //正好可以低位加,控制进位符号
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode listNode = new ListNode(0);
         ListNode currentNode = listNode;
@@ -61,7 +62,6 @@ public class AddTwoNumbers {
             }
             currentNode.next = new ListNode(num);
             currentNode = currentNode.next;
-
 
             if (l1 != null) {
                 l1 = l1.next;
