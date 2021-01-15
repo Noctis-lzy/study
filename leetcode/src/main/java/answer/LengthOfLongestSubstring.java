@@ -49,7 +49,7 @@ public class LengthOfLongestSubstring {
         int rk = -1;
         for (int i = 0; i < s.length(); ++i) {
             if (i != 0) {
-                set.remove(s.charAt(i));
+                set.remove(s.charAt(i - 1));
             }
             while (rk + 1 < s.length() && !set.contains(s.charAt(rk + 1))) {
                 set.add(s.charAt(rk + 1));
@@ -63,7 +63,7 @@ public class LengthOfLongestSubstring {
     }
 
     public static void main(String[] args) {
-        String input = "jbpnbwwd";
+        String input = "pwwkew";
         int i = lengthOfLongestSubstring(input);
         System.out.println(i);
     }
