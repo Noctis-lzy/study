@@ -44,7 +44,22 @@ public class LengthOfLongestSubstring {
      * 用窗口去做
      * */
     public static int lengthOfLongestSubstring(String s) {
-        return 0;
+        Set<Character> set = new HashSet<>();
+        int num = 0;
+        int rk = -1;
+        for (int i = 0; i < s.length(); ++i) {
+            if (i != 0) {
+                set.remove(s.charAt(i));
+            }
+            while (rk + 1 < s.length() && !set.contains(s.charAt(rk + 1))) {
+                set.add(s.charAt(rk + 1));
+                rk = rk + 1;
+            }
+            num = Math.max(num, rk - i + 1);
+        }
+
+
+        return num;
     }
 
     public static void main(String[] args) {
