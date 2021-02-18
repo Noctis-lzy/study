@@ -10,9 +10,11 @@ public class LongestPalindrome {
                 int j = i + l;
                 if (l == 0) {
                     dp[i][j] = true;
-                } else if (l == 1) {
+                }
+                else if (l == 1) {
                     dp[i][j] = (s.charAt(i) == s.charAt(j));
-                } else {
+                }
+                else {
                     dp[i][j] = (s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1]);
                 }
                 if (dp[i][j] && l + 1 > ans.length()) {
